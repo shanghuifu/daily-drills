@@ -1,8 +1,7 @@
 # ユーザーに数字を入力してもらい、その数の回数だけHello!と表示させるコードを記述してください。
+puts "表示回数を入力してください"
 input = gets.to_i
-input.times do
-  puts "Hello!"
-end
+input.times{ puts "Hello!" }
 
 # 以下の仕様にしたがってコードを記述してください。
 
@@ -11,3 +10,19 @@ end
 # ・Studentクラスにはintroduceメソッドが定義されている。実行すると
 # 　「私の名前は◯◯です。◯歳です」と表示がされる。
 # ・Studentクラスのインスタンスを作成し、introduceメソッドを実行する。
+
+class Person
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
+end
+
+class Student < Person
+  def introduce
+    puts "私の名前は#{@name}です。#{@age}才です。"
+  end
+end
+
+yamada = Student.new("山田", 20)
+puts yamada.introduce
