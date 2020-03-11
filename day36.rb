@@ -27,6 +27,7 @@ end
 def create
   @product = Product.new(product_params)
   @product.add_tax
+  # モデルでインスタンスメソッドを定義したため上記のように使用できる。
 
   respond_to do |format|
     if @product.save
